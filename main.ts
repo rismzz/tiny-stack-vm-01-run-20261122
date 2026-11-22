@@ -1,10 +1,10 @@
-// tiny-stack-vm: a faithful interpreter of make.fun's tiny stack ISA v1 (ISA.md in
-// the kit). Runs every /input/<id>/ program and writes /output/<id>/stdout.bin
-// plus exit.txt. Semantics follow the reference VM (generator/subject/vm.mjs)
-// exactly: 32-bit wrapping arithmetic, the ten traps with their own exit codes,
-// a 256-value stack, a 64-deep call stack, 256 words of memory, a 1,000,000-step
-// limit and a 65,536-byte output cap. Deterministic: no clock, no environment.
-// Verified: practice set 1,000,000/1,000,000 (40/40) and 120/120 instances
+// tiny-stack-vm: a faithful interpreter of make.fun's tiny stack ISA v1.
+// Runs every /input/<id>/ program, writes /output/<id>/stdout.bin + exit.txt.
+// Semantics follow the reference VM (generator/subject/vm.mjs) exactly: 32-bit
+// wrapping arithmetic, the ten traps with their own exit codes, a 256-value
+// stack, a 64-deep call stack, 256 words of memory, 1,000,000-step and
+// 65,536-byte output limits. Deterministic: no clock, no environment.
+// Verified: practice 1,000,000/1,000,000 (40/40); 120/120 fresh instances
 // matched against the reference VM on three freshly drawn sets.
 import { mkdirSync, readdirSync, readFileSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
